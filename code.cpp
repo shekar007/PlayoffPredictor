@@ -5,6 +5,7 @@
 #include <iostream>
 #include <sstream>
 #include <map>
+#include <iomanip>
 #include <tuple>
 #include <iomanip>
 #include <algorithm>
@@ -105,9 +106,16 @@ void check(vector<Team> teams, vector<tuple<Team, Team, int>> upcoming_matches, 
     Team t1 = get<0>(upcoming_matches.at(0));
     Team t2 = get<1>(upcoming_matches.at(0));
     // else recurse;
-
+    // 0, 4 out of 0 - 10
+    /**
+     * stength = 11
+     * strenght = 7
+     * 11x, 7x
+     * 18x = 100
+     * 100/18 * 11
+     *
+     */
     double pnew = 0.5;
-
     vector<Team> hehe(teams);
     vector<Team> what(teams);
     // t1.points += 2;
@@ -228,6 +236,22 @@ int main()
         prob_matrix[team.name] = zeroes;
     }
     check(teams, upcoming_matches, prob_matrix, 1);
+    map<string, double> top2;
+    map<string, double> top4;
+    for (auto entry : prob_matrix)
+    {
+        string n = entry.first;
+        vector<double> v = entry.second;
+        top2[n] = 0;
+        for (int i = 0; i < 2; i++)
+        {
+            top2[n] += v[i];
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            top4[n] += v[i];
+        }
+    }
     for (auto entry : prob_matrix)
     {
         string team = entry.first;            // Access the key (Team)
@@ -237,12 +261,16 @@ int main()
         cout << "Team: " << team << endl;
 
         // Print the vector of values
-        cout << "Values: ";
+        cout << "Probabilties: ";
         for (double value : values)
         {
-            cout << value << "     ";
+            cout << fixed << setprecision(2) << setw(6) << value * 100 << "% ";
         }
         cout << endl;
+        cout << "Top 2: " << top2[team] * 100 << "% " << endl;
+        cout << "Top 4: " << top4[team] * 100 << "% " << endl;
+        cout << endl;
     }
+
     return 0;
 }
