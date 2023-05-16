@@ -1,0 +1,7 @@
+Punjab Kings, Delhi Capitals, 64
+Sunrisers Hyderabad, Royal Challengers Bangalore, 65
+Punjab Kings, Rajasthan Royals, 66
+Delhi Capitals, Chennai Super Kings, 67
+Kolkata Knight Riders, Lucknow Super Giants, 68
+Mumbai Indians, Sunrisers Hyderabad, 69
+Royal Challengers Bangalore, Gujarat Titans, 70
