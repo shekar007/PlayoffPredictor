@@ -42,9 +42,8 @@ public:
         {
             return false;
         }
-
+        return false;
         // If points are equal, compare by NRR
-        return team1.nrr > team2.nrr;
     }
     bool operator<(const Team &other) const
     {
@@ -57,9 +56,6 @@ public:
         {
             return false;
         }
-
-        // If points are equal, compare by NRR
-        return nrr > other.nrr;
     }
 };
 class Match
@@ -89,15 +85,23 @@ void check(vector<Team> teams, vector<tuple<Team, Team, int>> upcoming_matches, 
     }
     if (upcoming_matches.size() == 0)
     {
-        int index = 0;
-        for (auto i : teams)
-        {
-            // Team x = teams[i];
-            // prob_matrix[teams[i]][i] += teams[i].prob;
 
-            prob_matrix[i.name][index] += i.prob;
-            // cout << i.prob << " is added to " << i.name << " at " << index << endl;
-            index++;
+        map<int, vector<Team>> tie;
+        for (int i = 0; i < teams.size(); i++)
+        {
+            tie[teams[i].points].push_back(teams[i]);
+        }
+        for (int i = 0; i < teams.size(); i++)
+        {
+            Team x = teams[i];
+            for (int j = 0; j < teams.size(); j++)
+            {
+                Team y = teams[j];
+                if (y.points == x.points)
+                {
+                    prob_matrix[x.name][j] += x.prob * (1.0 / tie[x.points].size());
+                }
+            }
         }
 
         return;
@@ -132,6 +136,9 @@ void check(vector<Team> teams, vector<tuple<Team, Team, int>> upcoming_matches, 
 
     // for (int i = 0 ; i < teams.size() ; i++) cout << teams[i].points <<teams[i].name << endl;
     check(hehe, upcoming_matches, prob_matrix, pnew);
+    for (int i = 0; i < teams.size(); i++)
+    {
+    }
 
     // t1.points -= 2;
     // t2.points += 2;
