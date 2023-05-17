@@ -30,12 +30,12 @@ To run the program, follow these steps:
 
 3. Compile the code using a C++ compiler
  ```
-g++ -o ipl_playoff_predictor ipl_playoff_predictor.cpp
- ```
+g++ code.cpp -o code
+```
 
 Run the compiled program  
 ```
-./ipl_playoff_predictor
+./code
 ```
 4. The program will display the predicted probabilities of teams qualifying for the playoffs based on the provided inputs.
 5. PS : Note: Make sure to have the input files (testpoints.txt and testmatches.txt) in the same directory as the compiled program.
