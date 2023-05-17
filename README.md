@@ -38,4 +38,4 @@ Run the compiled program
 ./code
 ```
 4. The program will display the predicted probabilities of teams qualifying for the playoffs based on the provided inputs.
-5. PS : Note: Make sure to have the input files (testpoints.txt and testmatches.txt) in the same directory as the compiled program.
+5. PS : Note: Make sure to have the input files and the names are same in the code and in the same directory as the compiled program.
