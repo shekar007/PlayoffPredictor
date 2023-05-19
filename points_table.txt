@@ -1,10 +1,10 @@
 Gujarat Titans,18,+0.835
 Chennai Super Kings,15,+0.381
 Lucknow Super Giants,15,+0.304
+Royal Challengers Bangalore,14,+0.180
 Mumbai Indians,14,-0.128
-Royal Challengers Bangalore,12,+0.166
 Rajasthan Royals,12,+0.140
 Kolkata Knight Riders,12,-0.256
 Punjab Kings,12,-0.268
-Sunrisers Hyderabad,8,-0.575
-Delhi Capitals,8,-0.686
+Sunrisers Hyderabad,8,-0.558
+Delhi Capitals,8,-0.572
