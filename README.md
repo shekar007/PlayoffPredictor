@@ -2,7 +2,7 @@
 # IPL Playoff Predictor
 
 The IPL Playoff Predictor is a C++ program that predicts the probabilities of teams qualifying for the playoffs based on their current standings, upcoming matches, and a set of rules. <br/>
-(It predicts the 3 teams which would mostly face CSK in the finals :) )
+(It predicts the 3 teams which would mostly face CSK :lion: in the finals :) )
 
 
 ## Input
